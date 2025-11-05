@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
-  Activity, CheckCircle2, FileText, Shield, Cloud, Database, 
+  Activity, CheckCircle2, FileText, Shield, Database, 
   Zap, Heart, Menu, X, Github, ExternalLink, Download, Send, 
   Code, Package, AlertCircle, TrendingUp, BarChart3, Lock, Sparkles
 } from 'lucide-react';
@@ -795,13 +795,6 @@ function App() {
               title: 'Installation Guide', 
               description: 'System requirements, dependencies, and quick start',
               color: 'cyan'
-            },
-            { 
-              key: 'backend-roadmap', 
-              icon: Cloud, 
-              title: 'Backend Development Roadmap', 
-              description: 'Cloud infrastructure, RESTful APIs, and future architecture',
-              color: 'indigo'
             },
             { 
               key: 'remaining-issues', 
