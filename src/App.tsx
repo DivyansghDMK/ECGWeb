@@ -192,19 +192,19 @@ function App() {
             
             {/* Stats Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-16">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all animate-scale-in opacity-0 stagger-1">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
                 <div className="text-4xl md:text-5xl font-bold mb-2">15K+</div>
                 <div className="text-sm text-blue-200">Core Code Lines</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all animate-scale-in opacity-0 stagger-2">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
                 <div className="text-4xl md:text-5xl font-bold mb-2">27</div>
                 <div className="text-sm text-blue-200">Python Modules</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all animate-scale-in opacity-0 stagger-3">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
                 <div className="text-4xl md:text-5xl font-bold mb-2">14</div>
                 <div className="text-sm text-blue-200">Core Features</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all animate-scale-in opacity-0 stagger-4">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
                 <div className="text-4xl md:text-5xl font-bold mb-2">0</div>
                 <div className="text-sm text-blue-200">Critical Bugs</div>
               </div>
@@ -230,7 +230,7 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Sprint 1 - In Progress (CURRENT) */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-blue-400 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-1 ring-4 ring-blue-100">
+            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-blue-400 hover:shadow-2xl transition-all ring-4 ring-blue-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center animate-pulse">
@@ -307,7 +307,7 @@ function App() {
             </div>
 
             {/* Sprint 2 - Planned */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-2">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
@@ -349,7 +349,7 @@ function App() {
             </div>
 
             {/* Sprint 3 - Planned */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-3">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-300 to-purple-400 flex items-center justify-center">
@@ -443,7 +443,7 @@ function App() {
                 i === 3 ? 'from-orange-50 to-orange-100' :
                 i === 4 ? 'from-cyan-50 to-cyan-100' :
                 'from-pink-50 to-pink-100'
-              } rounded-2xl p-8 border-2 border-transparent hover:border-blue-400 hover:shadow-2xl transition-all hover-lift animate-scale-in opacity-0 stagger-${i + 1}`}>
+              } rounded-2xl p-8 border-2 border-transparent hover:border-blue-400 hover:shadow-2xl transition-all hover-lift`}>
                 <div className={`w-16 h-16 rounded-xl ${
                   i === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
                   i === 1 ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
@@ -468,7 +468,7 @@ function App() {
             <h3 className="text-4xl font-bold mb-10 text-center text-white">Implemented Features</h3>
             <div className="grid md:grid-cols-2 gap-4">
               {completedFeatures.map((feature, i) => (
-                <div key={i} className={`flex items-start bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-md hover:shadow-xl hover:bg-white transition-all hover-lift animate-slide-in-left opacity-0 stagger-${(i % 9) + 1}`}>
+                <div key={i} className="flex items-start bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-md hover:shadow-xl hover:bg-white transition-all hover-lift">
                   <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center mr-4 flex-shrink-0">
                     <CheckCircle2 className="h-5 w-5 text-white" />
                   </div>
@@ -690,7 +690,7 @@ function App() {
               { label: 'PDF Generation', value: '<5s', icon: FileText, gradient: 'from-green-400 to-emerald-500' },
               { label: 'Memory Usage', value: '<200MB', icon: Database, gradient: 'from-purple-400 to-pink-500' }
             ].map((metric, i) => (
-              <div key={i} className={`bg-white/95 backdrop-blur-sm rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 animate-scale-in opacity-0 stagger-${i + 1}`}>
+              <div key={i} className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 text-center shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300">
                 <div className={`w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${metric.gradient} flex items-center justify-center shadow-lg`}>
                   <metric.icon className="h-10 w-10 text-white" />
                 </div>
@@ -806,7 +806,7 @@ function App() {
             <button
               key={i}
               onClick={() => openDocumentation(doc.key)}
-              className={`bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-blue-400 hover:shadow-xl transition-all text-left group hover-lift animate-fade-in-up opacity-0 stagger-${i + 1}`}
+              className="bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-blue-400 hover:shadow-xl transition-all text-left group hover-lift"
             >
               <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${
                 doc.color === 'blue' ? 'from-blue-400 to-blue-600' :
