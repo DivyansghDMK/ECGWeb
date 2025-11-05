@@ -115,7 +115,7 @@ function App() {
                   
                   alert('✅ Opening your email client...\n\nYour message will be sent to:\ndivyansh.srivastava@deckmount.in');
                   setShowModal(null);
-                }} className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center">
+                }} className="w-full px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all flex items-center justify-center">
                   <Send className="h-5 w-5 mr-2" /> Send Message
                 </button>
               </div>
@@ -418,7 +418,7 @@ function App() {
       </section>
 
       {/* Completed Features */}
-      <section id="completed" className="relative bg-white py-24">
+      <section id="completed" className="relative py-24" style={{background: '#F2F2F2'}}>
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-20 animate-fade-in">
@@ -840,7 +840,7 @@ function App() {
                   Access full technical documentation or contact the development team
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <button onClick={handleContact} className="px-10 py-4 bg-white text-blue-600 rounded-xl hover:bg-blue-50 transition-all transform hover:scale-105 font-semibold flex items-center shadow-lg">
+                  <button onClick={handleContact} className="px-10 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all transform hover:scale-105 font-semibold flex items-center shadow-lg">
                     <Send className="h-5 w-5 mr-2" /> Contact Development Team
                   </button>
                 </div>
