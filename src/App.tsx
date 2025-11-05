@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import {
-  Activity, CheckCircle2, FileText, Shield, Database, 
-  Zap, Heart, Menu, X, ExternalLink, Download, Send, 
-  Code, Package, AlertCircle, TrendingUp, BarChart3, Lock, Sparkles
-} from 'lucide-react';
 import { DocumentationViewer } from './components/DocumentationViewer';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { SprintTimeline } from './components/SprintTimeline';
+import { CompletedFeatures } from './components/CompletedFeatures';
+import { ContactModal } from './components/ContactModal';
 import { documentationFiles } from './data/documentation';
 
 function App() {
@@ -37,33 +37,6 @@ function App() {
     setShowDocumentation(docKey);
   };
 
-  // Project completion data
-  const completedModules = [
-    { name: 'Core System', files: 5, lines: '~15,000', icon: Code },
-    { name: 'Authentication', files: 2, lines: '~3,000', icon: Lock },
-    { name: 'ECG Processing', files: 5, lines: '~25,000', icon: Activity },
-    { name: 'Dashboard', files: 3, lines: '~12,000', icon: TrendingUp },
-    { name: 'Utilities', files: 8, lines: '~18,000', icon: Package },
-    { name: 'Configuration', files: 2, lines: '~2,000', icon: Shield }
-  ];
-
-  const completedFeatures = [
-    '12-Lead ECG Real-time Visualization',
-    'Hardware Data Acquisition (Serial)',
-    'Demo Mode with Synthetic Data',
-    'Pan-Tompkins R-peak Detection',
-    'Real-time Metrics (HR, PR, QRS, QT/QTc, ST, HRV)',
-    'PDF Report Generation',
-    'User Authentication & Registration',
-    'Dashboard with Live Metrics',
-    'Admin Panel (Reports & Users)',
-    'Cloud Upload (AWS S3, Azure, GCS, FTP)',
-    'Offline-First Queue System',
-    'Session Recording & Playback',
-    'Crash Logger & Error Handling',
-    'Settings Management'
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Documentation Viewer */}
@@ -76,56 +49,7 @@ function App() {
       )}
 
       {/* Contact Modal */}
-      {showModal === 'contact' && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={() => setShowModal(null)}>
-          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in" onClick={(e) => e.stopPropagation()}>
-            <div className="p-8">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold">Contact Development Team</h3>
-                <button onClick={() => setShowModal(null)} className="p-2 hover:bg-gray-100 rounded-full">
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Name</label>
-                  <input type="text" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Your name" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <input type="email" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Message</label>
-                  <textarea rows={4} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Your message..."></textarea>
-                </div>
-                <button onClick={() => { 
-                  const name = (document.querySelector('input[placeholder="Your name"]') as HTMLInputElement)?.value;
-                  const email = (document.querySelector('input[placeholder="your@email.com"]') as HTMLInputElement)?.value;
-                  const message = (document.querySelector('textarea[placeholder="Your message..."]') as HTMLTextAreaElement)?.value;
-                  
-                  if (!name || !email || !message) {
-                    alert('⚠️ Please fill in all fields');
-                    return;
-                  }
-                  
-                  const subject = encodeURIComponent('ECG Monitor - Contact from ' + name);
-                  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-                  window.location.href = `mailto:divyansh.srivastava@deckmount.in?subject=${subject}&body=${body}`;
-                  
-                  alert('✅ Opening your email client...\n\nYour message will be sent to:\ndivyansh.srivastava@deckmount.in');
-                  setShowModal(null);
-                }} className="w-full px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all flex items-center justify-center">
-                  <Send className="h-5 w-5 mr-2" /> Send Message
-                </button>
-              </div>
-              <div className="mt-6 pt-6 border-t space-y-2 text-sm text-gray-600">
-                <p><strong>Email:</strong> <a href="mailto:divyansh.srivastava@deckmount.in" className="text-blue-600 hover:underline">divyansh.srivastava@deckmount.in</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {showModal === 'contact' && <ContactModal onClose={() => setShowModal(null)} />}
 
       {/* Navigation */}
       <nav className={`sticky top-0 z-40 w-full border-b transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white/90 backdrop-blur-md'}`}>
