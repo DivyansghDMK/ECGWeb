@@ -168,49 +168,18 @@ function App() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 text-white py-24">
-        {/* Live Scrolling ECG Waveform - Continuous Loop */}
-        <div className="absolute inset-0 opacity-20 overflow-hidden">
-          <div className="ecg-container">
-            <svg className="ecg-wave" viewBox="0 0 1000 200" preserveAspectRatio="none">
-              <path d="M0,100 L50,100 L55,90 L60,110 L65,85 L70,120 L75,100 L150,100 L155,90 L160,110 L165,85 L170,120 L175,100 L250,100 L255,90 L260,110 L265,85 L270,120 L275,100 L350,100 L355,90 L360,110 L365,85 L370,120 L375,100 L450,100 L455,90 L460,110 L465,85 L470,120 L475,100 L550,100 L555,90 L560,110 L565,85 L570,120 L575,100 L650,100 L655,90 L660,110 L665,85 L670,120 L675,100 L750,100 L755,90 L760,110 L765,85 L770,120 L775,100 L850,100 L855,90 L860,110 L865,85 L870,120 L875,100 L950,100 L955,90 L960,110 L965,85 L970,120 L975,100 L1000,100" 
-                    stroke="currentColor" strokeWidth="2" fill="none" className="text-white"/>
-            </svg>
-            <svg className="ecg-wave" viewBox="0 0 1000 200" preserveAspectRatio="none">
-              <path d="M0,100 L50,100 L55,90 L60,110 L65,85 L70,120 L75,100 L150,100 L155,90 L160,110 L165,85 L170,120 L175,100 L250,100 L255,90 L260,110 L265,85 L270,120 L275,100 L350,100 L355,90 L360,110 L365,85 L370,120 L375,100 L450,100 L455,90 L460,110 L465,85 L470,120 L475,100 L550,100 L555,90 L560,110 L565,85 L570,120 L575,100 L650,100 L655,90 L660,110 L665,85 L670,120 L675,100 L750,100 L755,90 L760,110 L765,85 L770,120 L775,100 L850,100 L855,90 L860,110 L865,85 L870,120 L875,100 L950,100 L955,90 L960,110 L965,85 L970,120 L975,100 L1000,100" 
-                    stroke="currentColor" strokeWidth="2" fill="none" className="text-white"/>
-            </svg>
-          </div>
+        {/* Stable ECG Waveform Background Pattern */}
+        <div className="absolute inset-0 opacity-15">
+          <svg className="w-full h-full" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="ecg-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+                <path d="M0,100 L40,100 L42,90 L44,110 L46,85 L48,120 L50,100 L90,100 L92,90 L94,110 L96,85 L98,120 L100,100 L140,100 L142,90 L144,110 L146,85 L148,120 L150,100 L190,100 L192,90 L194,110 L196,85 L198,120 L200,100" 
+                      stroke="currentColor" strokeWidth="1.5" fill="none" className="text-white"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#ecg-pattern)"/>
+          </svg>
         </div>
-        
-        <style>{`
-          .ecg-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-          }
-          
-          .ecg-wave {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            min-width: 100%;
-            animation: ecgScroll 20s linear infinite;
-          }
-          
-          .ecg-wave:nth-child(2) {
-            animation-delay: -10s;
-          }
-          
-          @keyframes ecgScroll {
-            0% {
-              transform: translateX(0%);
-            }
-            100% {
-              transform: translateX(-100%);
-            }
-          }
-        `}</style>
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="animate-fade-in">
