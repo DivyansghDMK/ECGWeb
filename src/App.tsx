@@ -237,57 +237,15 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Sprint 1 - Complete */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-green-200 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-1">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                    <CheckCircle2 className="h-7 w-7 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">Sprint 1</h3>
-                    <p className="text-sm text-gray-500">Nov 1-15, 2025</p>
-                  </div>
-                </div>
-                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Complete</span>
-              </div>
-              
-              <div className="mb-6">
-                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full" style={{ width: '100%' }}></div>
-                </div>
-                <p className="text-right text-sm text-gray-600 mt-2">100% Complete</p>
-              </div>
-
-              <ul className="space-y-3">
-                <li className="flex items-start space-x-2">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Core ECG monitoring</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Report generation</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">AWS S3 integration</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Admin panel foundation</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Sprint 2 - In Progress */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-blue-400 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-2 ring-4 ring-blue-100">
+            {/* Sprint 1 - In Progress (CURRENT) */}
+            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-blue-400 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-1 ring-4 ring-blue-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center animate-pulse">
                     <Activity className="h-7 w-7 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900">Sprint 2</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">Sprint 1</h3>
                     <p className="text-sm text-gray-500">Nov 5-15, 2025</p>
                   </div>
                 </div>
@@ -298,7 +256,12 @@ function App() {
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                   <div className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-500" style={{ width: '15%' }}></div>
                 </div>
-                <p className="text-right text-sm text-gray-600 mt-2">15% Complete • 🔥 Active</p>
+                <p className="text-right text-sm text-gray-600 mt-2">15% Complete • 🔥 Active Today!</p>
+              </div>
+
+              <div className="mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p className="text-xs font-semibold text-yellow-800 mb-1">⚡ PENDING TASKS (Updated Nov 5)</p>
+                <p className="text-xs text-yellow-700">Target completion: Saturday, Nov 15</p>
               </div>
 
               <ul className="space-y-3">
@@ -306,25 +269,37 @@ function App() {
                   <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
                     <div className="h-2 w-2 bg-blue-400 rounded"></div>
                   </div>
-                  <span className="text-gray-700 font-medium">ECG Metric Calculations (P/QRS/T, RV5/SV1, QTCF)</span>
+                  <div>
+                    <span className="text-gray-700 font-medium block">ECG Metric Calculations</span>
+                    <span className="text-xs text-gray-500">P/QRS/T, RV5/SV1, RV5+SV1, QTCF formulas</span>
+                  </div>
                 </li>
                 <li className="flex items-start space-x-2">
                   <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
                     <div className="h-2 w-2 bg-blue-400 rounded"></div>
                   </div>
-                  <span className="text-gray-700 font-medium">Wave Speed & Wave Gain Controls</span>
+                  <div>
+                    <span className="text-gray-700 font-medium block">Wave Controls</span>
+                    <span className="text-xs text-gray-500">Wave Speed & Wave Gain functions</span>
+                  </div>
                 </li>
                 <li className="flex items-start space-x-2">
                   <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
                     <div className="h-2 w-2 bg-blue-400 rounded"></div>
                   </div>
-                  <span className="text-gray-700 font-medium">Patient Details (Fix data mapping & save logic)</span>
+                  <div>
+                    <span className="text-gray-700 font-medium block">Patient Details</span>
+                    <span className="text-xs text-gray-500">Fix data mapping & save logic</span>
+                  </div>
                 </li>
                 <li className="flex items-start space-x-2">
                   <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
                     <div className="h-2 w-2 bg-blue-400 rounded"></div>
                   </div>
-                  <span className="text-gray-700 font-medium">Overlay Working Mode (Fix graph freeze)</span>
+                  <div>
+                    <span className="text-gray-700 font-medium block">Overlay Working Mode</span>
+                    <span className="text-xs text-gray-500">Fix graph freeze issue</span>
+                  </div>
                 </li>
               </ul>
 
@@ -339,15 +314,15 @@ function App() {
               </div>
             </div>
 
-            {/* Sprint 3 - Planned */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-3">
+            {/* Sprint 2 - Planned */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-2">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
                     <Package className="h-7 w-7 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900">Sprint 3</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">Sprint 2</h3>
                     <p className="text-sm text-gray-500">Nov 16-30, 2025</p>
                   </div>
                 </div>
@@ -377,6 +352,48 @@ function App() {
                 <li className="flex items-start space-x-2">
                   <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
                   <span className="text-gray-600">Email report delivery</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Sprint 3 - Planned */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-3">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-300 to-purple-400 flex items-center justify-center">
+                    <Sparkles className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">Sprint 3</h3>
+                    <p className="text-sm text-gray-500">Dec 1-15, 2025</p>
+                  </div>
+                </div>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold">Planned</span>
+              </div>
+              
+              <div className="mb-6">
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-purple-300 to-purple-400 rounded-full" style={{ width: '0%' }}></div>
+                </div>
+                <p className="text-right text-sm text-gray-600 mt-2">0% Complete</p>
+              </div>
+
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                  <span className="text-gray-600">Role-based permissions</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                  <span className="text-gray-600">Security improvements</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                  <span className="text-gray-600">Advanced ECG analysis (ML)</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                  <span className="text-gray-600">Data export/import features</span>
                 </li>
               </ul>
             </div>
