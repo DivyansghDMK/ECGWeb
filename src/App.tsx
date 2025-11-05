@@ -603,6 +603,13 @@ function App() {
               title: 'Remaining Issues & Status', 
               description: 'Bug fixes, low-priority improvements, and code quality',
               color: 'yellow'
+            },
+            { 
+              key: 'sprint-plan', 
+              icon: Activity, 
+              title: 'Sprint Plan (Nov 5-15)', 
+              description: '4 critical tasks, day-by-day plan, completion target: Nov 15',
+              color: 'pink'
             }
           ].map((doc, i) => (
             <button
@@ -618,6 +625,7 @@ function App() {
                 doc.color === 'cyan' ? 'from-cyan-400 to-cyan-600' :
                 doc.color === 'indigo' ? 'from-indigo-400 to-indigo-600' :
                 doc.color === 'yellow' ? 'from-yellow-400 to-yellow-600' :
+                doc.color === 'pink' ? 'from-pink-400 to-pink-600' :
                 'from-red-400 to-red-600'
               } flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
                 <doc.icon className="h-7 w-7 text-white" />

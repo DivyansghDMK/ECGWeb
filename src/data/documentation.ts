@@ -822,5 +822,248 @@ self.timer.start(30)            # Magic number
 4. **Low Priority**: Can be addressed in future sprints
 
 **Current code is production-ready!** 🚀`
+  },
+  'sprint-plan': {
+    title: 'Sprint Plan (Nov 5-15, 2025)',
+    icon: 'calendar',
+    content: `# 🎯 Sprint Plan - November 5-15, 2025
+
+**Sprint Duration:** November 5 - November 15, 2025 (11 days)  
+**Sprint Goal:** Fix critical ECG functionality issues and complete pending features  
+**Team Status:** ✅ Actively Working  
+**Target Completion:** Saturday, November 15, 2025
+
+---
+
+## 📋 Sprint Backlog
+
+### 🔴 **CRITICAL PRIORITY** (Must Complete)
+
+#### **1. ECG Metric Calculations** 🚨
+**Status:** 🔄 Work in Progress  
+**Assigned:** Development Team  
+**Estimated Time:** 3-4 days  
+**Deadline:** November 10, 2025
+
+**Tasks:**
+- [ ] Implement P-wave amplitude calculation
+- [ ] Implement QRS complex amplitude calculation  
+- [ ] Implement T-wave amplitude calculation
+- [ ] Integrate RV5 lead metric
+- [ ] Integrate SV1 lead metric
+- [ ] Calculate RV5+SV1 combined metric
+- [ ] Implement QTCF (QT Corrected Fredericia) formula
+- [ ] Validate all formulas against medical standards
+- [ ] Unit testing for metric accuracy
+
+**Dependencies:**
+- Pan-Tompkins R-peak detection (✅ Complete)
+- Real-time data streaming (✅ Complete)
+
+**Acceptance Criteria:**
+- All metrics display correctly in Dashboard
+- Values match medical reference ranges
+- No flickering or lag in metric updates
+- Metrics sync across all views
+
+---
+
+#### **2. Wave Controls** 🎛️
+**Status:** 🔄 Work in Progress  
+**Assigned:** Development Team  
+**Estimated Time:** 2-3 days  
+**Deadline:** November 11, 2025
+
+**Tasks:**
+- [ ] Fix Wave Speed control (12.5mm/s, 25mm/s, 50mm/s)
+- [ ] Implement Wave Gain control (5mm/mV, 10mm/mV, 20mm/mV)
+- [ ] Ensure controls work in real-time mode
+- [ ] Ensure controls work in demo mode
+- [ ] Add visual feedback for control changes
+- [ ] Persist user preferences
+- [ ] Test with real hardware
+- [ ] Fix any UI/UX issues
+
+**Dependencies:**
+- ECG plotting engine (✅ Complete)
+- Settings management (✅ Complete)
+
+**Acceptance Criteria:**
+- Speed changes apply immediately to all leads
+- Gain changes scale waveforms correctly
+- Settings persist across sessions
+- No performance degradation
+
+---
+
+#### **3. Patient Details Module** 📝
+**Status:** 🔴 Critical Bug  
+**Assigned:** Development Team  
+**Estimated Time:** 2 days  
+**Deadline:** November 12, 2025
+
+**Tasks:**
+- [ ] Fix patient data mapping (name, age, gender, contact)
+- [ ] Correct save logic for patient records
+- [ ] Fix data validation issues
+- [ ] Test CRUD operations (Create, Read, Update, Delete)
+- [ ] Verify S3 upload of patient data
+- [ ] Fix report generation with patient info
+- [ ] Add error handling for missing fields
+- [ ] Update UI for better data entry
+
+**Current Issues:**
+- ❌ Wrong data mapping between UI and backend
+- ❌ Incorrect save logic causing data loss
+- ❌ Fields not populating in reports
+
+**Acceptance Criteria:**
+- Patient data saves correctly to local database
+- Data maps correctly in PDF reports
+- No data loss or corruption
+- S3 upload includes patient metadata
+
+---
+
+#### **4. Overlay Working Mode** 🖥️
+**Status:** 🔴 Critical Bug  
+**Assigned:** Development Team  
+**Estimated Time:** 1-2 days  
+**Deadline:** November 13, 2025
+
+**Tasks:**
+- [ ] Debug graph freeze issue when changing modes
+- [ ] Fix mode switching logic (6:2, 12:1, Overlay)
+- [ ] Clear/reset plot buffers on mode change
+- [ ] Prevent race conditions in rendering
+- [ ] Add mode transition animations
+- [ ] Test all mode combinations
+- [ ] Fix any memory leaks
+- [ ] Optimize rendering performance
+
+**Current Issues:**
+- ❌ Graph freezes when switching to Overlay mode
+- ❌ Plot gets stuck and requires app restart
+- ❌ Memory accumulation on mode switches
+
+**Acceptance Criteria:**
+- Smooth transitions between all modes
+- No graph freezing or stuttering
+- No memory leaks
+- All modes work correctly
+
+---
+
+## 📊 Sprint Progress
+
+### **Day-by-Day Plan:**
+
+| Date | Day | Focus Area | Tasks |
+|------|-----|-----------|-------|
+| **Nov 5** | Tue | Sprint Planning + Metric Calculations | Start P/QRS/T wave detection |
+| **Nov 6** | Wed | Metric Calculations | Complete RV5/SV1/QTCF formulas |
+| **Nov 7** | Thu | Metric Calculations + Testing | Validate all metrics |
+| **Nov 8** | Fri | Wave Controls | Implement Speed/Gain controls |
+| **Nov 9** | Sat | Wave Controls + Testing | Test with hardware |
+| **Nov 10** | Sun | Patient Details | Fix data mapping |
+| **Nov 11** | Mon | Patient Details | Fix save logic + S3 upload |
+| **Nov 12** | Tue | Overlay Mode | Debug freeze issue |
+| **Nov 13** | Wed | Overlay Mode + Testing | Test all mode switches |
+| **Nov 14** | Thu | Integration Testing | End-to-end testing |
+| **Nov 15** | Fri | Sprint Review + Deployment | Final testing & documentation |
+
+---
+
+## 🎯 Sprint Goals & Metrics
+
+### **Definition of Done:**
+- [ ] All 4 critical issues resolved
+- [ ] Code reviewed and approved
+- [ ] Unit tests passing
+- [ ] Integration tests passing
+- [ ] Documentation updated
+- [ ] Tested on real hardware
+- [ ] No critical bugs
+- [ ] Performance benchmarks met
+
+### **Success Metrics:**
+- **Code Quality:** 0 critical bugs, < 5 minor bugs
+- **Performance:** < 100ms metric calculation latency
+- **Test Coverage:** > 80% for new code
+- **User Satisfaction:** Approved by medical team
+
+### **Velocity Target:**
+- **Story Points Planned:** 20
+- **Story Points Expected:** 20
+- **Team Capacity:** 100%
+
+---
+
+## 🚀 Sprint Deliverables
+
+### **Technical Deliverables:**
+1. ✅ All ECG metrics calculating correctly (P/QRS/T, RV5/SV1, QTCF)
+2. ✅ Wave Speed & Wave Gain controls fully functional
+3. ✅ Patient Details module bug-free and tested
+4. ✅ Overlay mode working without freezing
+
+### **Documentation Deliverables:**
+1. ✅ Updated technical documentation
+2. ✅ User guide for new features
+3. ✅ Testing reports
+4. ✅ Sprint retrospective
+
+### **Quality Deliverables:**
+1. ✅ All unit tests passing
+2. ✅ Integration tests passing
+3. ✅ Performance benchmarks met
+4. ✅ Code review completed
+
+---
+
+## ⚠️ Risks & Mitigation
+
+### **Identified Risks:**
+
+| Risk | Probability | Impact | Mitigation Strategy |
+|------|-------------|--------|---------------------|
+| **Hardware unavailable for testing** | Medium | High | Use synthetic data + remote testing |
+| **Complex metric formulas take longer** | High | Medium | Prioritize core metrics, defer advanced ones |
+| **Mode switching has deep issues** | Medium | High | Allocate extra buffer time, escalate if needed |
+| **Team member unavailable** | Low | Medium | Cross-train team members |
+
+---
+
+## 📈 Current Sprint Status
+
+**Overall Progress:** 0% (Just Started)
+
+**Task Breakdown:**
+- 🔄 Metric Calculations: 0/9 tasks
+- 🔄 Wave Controls: 0/8 tasks
+- 🔄 Patient Details: 0/8 tasks
+- 🔄 Overlay Mode: 0/8 tasks
+
+**Total:** 0/33 tasks completed
+
+---
+
+## 🎯 Next Sprint Preview (Nov 16-30)
+
+**Potential Features:**
+- Guest Mode implementation
+- Email/OTP authentication
+- Admin panel enhancements
+- Email report delivery
+
+---
+
+**Last Updated:** November 5, 2025  
+**Next Update:** November 8, 2025 (Mid-Sprint Review)  
+**Sprint End:** November 15, 2025
+
+---
+
+**🚀 Let's deliver an amazing sprint! Team, we got this! 💪**`
   }
 };
