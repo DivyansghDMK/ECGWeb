@@ -140,6 +140,7 @@ function App() {
             <span className="text-xl font-bold">ECG Monitor Documentation</span>
           </div>
           <div className="hidden md:flex space-x-6">
+            <button onClick={() => scrollToSection('timeline')} className="text-sm font-medium hover:text-blue-600 transition-colors">Timeline</button>
             <button onClick={() => scrollToSection('completed')} className="text-sm font-medium hover:text-blue-600 transition-colors">Completed</button>
             <button onClick={() => scrollToSection('structure')} className="text-sm font-medium hover:text-blue-600 transition-colors">Structure</button>
             <button onClick={() => scrollToSection('issues')} className="text-sm font-medium hover:text-blue-600 transition-colors">Issues</button>
@@ -162,6 +163,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="container mx-auto px-4 py-4 space-y-3">
+              <button onClick={() => scrollToSection('timeline')} className="block w-full text-left py-2">Timeline</button>
               <button onClick={() => scrollToSection('completed')} className="block w-full text-left py-2">Completed</button>
               <button onClick={() => scrollToSection('structure')} className="block w-full text-left py-2">Structure</button>
               <button onClick={() => scrollToSection('issues')} className="block w-full text-left py-2">Issues</button>
@@ -213,6 +215,193 @@ function App() {
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all animate-scale-in opacity-0 stagger-4">
                 <div className="text-4xl md:text-5xl font-bold mb-2">0</div>
                 <div className="text-sm text-blue-200">Critical Bugs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sprint Timeline */}
+      <section id="timeline" className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+              DEVELOPMENT ROADMAP
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Sprint Timeline
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Structured sprint-based development with clear milestones and deliverables
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Sprint 1 - Complete */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-green-200 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-1">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                    <CheckCircle2 className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">Sprint 1</h3>
+                    <p className="text-sm text-gray-500">Nov 1-15, 2025</p>
+                  </div>
+                </div>
+                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Complete</span>
+              </div>
+              
+              <div className="mb-6">
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full" style={{ width: '100%' }}></div>
+                </div>
+                <p className="text-right text-sm text-gray-600 mt-2">100% Complete</p>
+              </div>
+
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-2">
+                  <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Core ECG monitoring</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Report generation</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">AWS S3 integration</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Admin panel foundation</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Sprint 2 - In Progress */}
+            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-blue-400 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-2 ring-4 ring-blue-100">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center animate-pulse">
+                    <Activity className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">Sprint 2</h3>
+                    <p className="text-sm text-gray-500">Nov 5-15, 2025</p>
+                  </div>
+                </div>
+                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold animate-pulse">In Progress</span>
+              </div>
+              
+              <div className="mb-6">
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-500" style={{ width: '15%' }}></div>
+                </div>
+                <p className="text-right text-sm text-gray-600 mt-2">15% Complete • 🔥 Active</p>
+              </div>
+
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                    <div className="h-2 w-2 bg-blue-400 rounded"></div>
+                  </div>
+                  <span className="text-gray-700 font-medium">ECG Metric Calculations (P/QRS/T, RV5/SV1, QTCF)</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                    <div className="h-2 w-2 bg-blue-400 rounded"></div>
+                  </div>
+                  <span className="text-gray-700 font-medium">Wave Speed & Wave Gain Controls</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                    <div className="h-2 w-2 bg-blue-400 rounded"></div>
+                  </div>
+                  <span className="text-gray-700 font-medium">Patient Details (Fix data mapping & save logic)</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                    <div className="h-2 w-2 bg-blue-400 rounded"></div>
+                  </div>
+                  <span className="text-gray-700 font-medium">Overlay Working Mode (Fix graph freeze)</span>
+                </li>
+              </ul>
+
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <button 
+                  onClick={() => openDocumentation('sprint-plan')}
+                  className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2"
+                >
+                  <FileText className="h-5 w-5" />
+                  <span>View Full Sprint Plan</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Sprint 3 - Planned */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all animate-fade-in-up opacity-0 stagger-3">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                    <Package className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">Sprint 3</h3>
+                    <p className="text-sm text-gray-500">Nov 16-30, 2025</p>
+                  </div>
+                </div>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold">Planned</span>
+              </div>
+              
+              <div className="mb-6">
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-gray-300 to-gray-400 rounded-full" style={{ width: '0%' }}></div>
+                </div>
+                <p className="text-right text-sm text-gray-600 mt-2">0% Complete</p>
+              </div>
+
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                  <span className="text-gray-600">Guest Mode implementation</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                  <span className="text-gray-600">Email/OTP authentication</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                  <span className="text-gray-600">Admin panel enhancements</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                  <span className="text-gray-600">Email report delivery</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Sprint Stats */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <div className="grid md:grid-cols-4 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-green-600 mb-1">52</div>
+                  <div className="text-sm text-gray-600">Features Delivered</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-blue-600 mb-1">4</div>
+                  <div className="text-sm text-gray-600">Tasks In Progress</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-gray-600 mb-1">15</div>
+                  <div className="text-sm text-gray-600">Tasks Planned</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-purple-600 mb-1">Nov 15</div>
+                  <div className="text-sm text-gray-600">Next Milestone</div>
+                </div>
               </div>
             </div>
           </div>
