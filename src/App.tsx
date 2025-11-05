@@ -168,13 +168,28 @@ function App() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 text-white py-24">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 1000 200" preserveAspectRatio="none">
-            <path d="M0,100 L50,100 L55,100 L60,90 L65,110 L70,85 L75,120 L80,100 L200,100 L205,100 L210,90 L215,110 L220,85 L225,120 L230,100 L350,100 L355,100 L360,90 L365,110 L370,85 L375,120 L380,100 L500,100 L505,100 L510,90 L515,110 L520,85 L525,120 L530,100 L650,100 L655,100 L660,90 L665,110 L670,85 L675,120 L680,100 L800,100 L805,100 L810,90 L815,110 L820,85 L825,120 L830,100 L1000,100" 
+        {/* Live Scrolling ECG Waveform */}
+        <div className="absolute inset-0 opacity-20 overflow-hidden">
+          <svg className="w-full h-full ecg-scroll" viewBox="0 0 2000 200" preserveAspectRatio="none">
+            <path d="M-1000,100 L-950,100 L-945,100 L-940,90 L-935,110 L-930,85 L-925,120 L-920,100 L-800,100 L-795,100 L-790,90 L-785,110 L-780,85 L-775,120 L-770,100 L-650,100 L-645,100 L-640,90 L-635,110 L-630,85 L-625,120 L-620,100 L-500,100 L-495,100 L-490,90 L-485,110 L-480,85 L-475,120 L-470,100 L-350,100 L-345,100 L-340,90 L-335,110 L-330,85 L-325,120 L-320,100 L-200,100 L-195,100 L-190,90 L-185,110 L-180,85 L-175,120 L-170,100 L-50,100 L-45,100 L-40,90 L-35,110 L-30,85 L-25,120 L-20,100 L0,100 L50,100 L55,100 L60,90 L65,110 L70,85 L75,120 L80,100 L200,100 L205,100 L210,90 L215,110 L220,85 L225,120 L230,100 L350,100 L355,100 L360,90 L365,110 L370,85 L375,120 L380,100 L500,100 L505,100 L510,90 L515,110 L520,85 L525,120 L530,100 L650,100 L655,100 L660,90 L665,110 L670,85 L675,120 L680,100 L800,100 L805,100 L810,90 L815,110 L820,85 L825,120 L830,100 L950,100 L955,100 L960,90 L965,110 L970,85 L975,120 L980,100 L1100,100 L1105,100 L1110,90 L1115,110 L1120,85 L1125,120 L1130,100 L1250,100 L1255,100 L1260,90 L1265,110 L1270,85 L1275,120 L1280,100 L1400,100 L1405,100 L1410,90 L1415,110 L1420,85 L1425,120 L1430,100 L1550,100 L1555,100 L1560,90 L1565,110 L1570,85 L1575,120 L1580,100 L1700,100 L1705,100 L1710,90 L1715,110 L1720,85 L1725,120 L1730,100 L1850,100 L1855,100 L1860,90 L1865,110 L1870,85 L1875,120 L1880,100 L2000,100" 
                   stroke="currentColor" strokeWidth="2" fill="none" className="text-white"/>
           </svg>
         </div>
+        
+        <style>{`
+          @keyframes ecgScroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          .ecg-scroll {
+            animation: ecgScroll 15s linear infinite;
+          }
+        `}</style>
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="animate-fade-in">
