@@ -549,6 +549,20 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
             { 
+              key: 'frontend-backend', 
+              icon: TrendingUp, 
+              title: 'Frontend & Backend Summary', 
+              description: 'Complete development status, implemented features, and recent fixes',
+              color: 'green'
+            },
+            { 
+              key: 'codebase-analysis', 
+              icon: AlertCircle, 
+              title: 'Codebase Analysis Report', 
+              description: 'Code quality review, identified issues, and fix recommendations',
+              color: 'red'
+            },
+            { 
               key: 'technical-docs', 
               icon: FileText, 
               title: 'Technical Documentation', 
@@ -559,36 +573,36 @@ function App() {
               key: 'project-structure', 
               icon: Database, 
               title: 'Project Structure', 
-              description: 'Directory layout, modules, and architecture',
+              description: 'Directory layout, 27 modules, and clean architecture',
               color: 'purple'
-            },
-            { 
-              key: 'installation', 
-              icon: Download, 
-              title: 'Installation Guide', 
-              description: 'Setup instructions and dependencies',
-              color: 'green'
             },
             { 
               key: 'performance', 
               icon: Zap, 
               title: 'Performance Optimization', 
-              description: 'Speed improvements and caching strategies',
+              description: '2-3x speed improvements, caching, threading strategies',
               color: 'orange'
+            },
+            { 
+              key: 'installation', 
+              icon: Download, 
+              title: 'Installation Guide', 
+              description: 'System requirements, dependencies, and quick start',
+              color: 'cyan'
             },
             { 
               key: 'backend-roadmap', 
               icon: Cloud, 
-              title: 'Backend Development', 
-              description: 'Cloud infrastructure and API architecture',
-              color: 'cyan'
+              title: 'Backend Development Roadmap', 
+              description: 'Cloud infrastructure, RESTful APIs, and future architecture',
+              color: 'indigo'
             },
             { 
               key: 'remaining-issues', 
-              icon: AlertCircle, 
-              title: 'Status & Issues', 
-              description: 'Current bugs and improvement areas',
-              color: 'red'
+              icon: Shield, 
+              title: 'Remaining Issues & Status', 
+              description: 'Bug fixes, low-priority improvements, and code quality',
+              color: 'yellow'
             }
           ].map((doc, i) => (
             <button
@@ -602,8 +616,10 @@ function App() {
                 doc.color === 'green' ? 'from-green-400 to-green-600' :
                 doc.color === 'orange' ? 'from-orange-400 to-orange-600' :
                 doc.color === 'cyan' ? 'from-cyan-400 to-cyan-600' :
+                doc.color === 'indigo' ? 'from-indigo-400 to-indigo-600' :
+                doc.color === 'yellow' ? 'from-yellow-400 to-yellow-600' :
                 'from-red-400 to-red-600'
-              } flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+              } flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
                 <doc.icon className="h-7 w-7 text-white" />
               </div>
               <h3 className="font-bold text-xl mb-2 text-gray-900 group-hover:text-blue-600 transition-colors flex items-center">
@@ -661,20 +677,25 @@ function App() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Documentation</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><button onClick={() => openDocumentation('technical-docs')} className="hover:text-white transition-colors flex items-center">
-                  Technical Docs <ExternalLink className="h-3 w-3 ml-1" />
-                </button></li>
-                <li><button onClick={() => openDocumentation('performance')} className="hover:text-white transition-colors flex items-center">
-                  Performance Guide <ExternalLink className="h-3 w-3 ml-1" />
-                </button></li>
-                <li><button onClick={handleGithub} className="hover:text-white transition-colors flex items-center">
-                  GitHub <ExternalLink className="h-3 w-3 ml-1" />
-                </button></li>
-                <li><a href="mailto:divyansh.srivastava@deckmount.in" className="hover:text-white transition-colors">Contact Team</a></li>
-              </ul>
-            </div>
+            <h3 className="font-semibold mb-4">Documentation</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><button onClick={() => openDocumentation('frontend-backend')} className="hover:text-white transition-colors flex items-center">
+                Frontend & Backend <ExternalLink className="h-3 w-3 ml-1" />
+              </button></li>
+              <li><button onClick={() => openDocumentation('codebase-analysis')} className="hover:text-white transition-colors flex items-center">
+                Codebase Analysis <ExternalLink className="h-3 w-3 ml-1" />
+              </button></li>
+              <li><button onClick={() => openDocumentation('technical-docs')} className="hover:text-white transition-colors flex items-center">
+                Technical Docs <ExternalLink className="h-3 w-3 ml-1" />
+              </button></li>
+              <li><button onClick={() => openDocumentation('performance')} className="hover:text-white transition-colors flex items-center">
+                Performance <ExternalLink className="h-3 w-3 ml-1" />
+              </button></li>
+              <li><button onClick={handleGithub} className="hover:text-white transition-colors flex items-center">
+                GitHub <ExternalLink className="h-3 w-3 ml-1" />
+              </button></li>
+            </ul>
+          </div>
           </div>
           <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
             <p>© 2025 ECG Monitor Application • Updated: November 5, 2025</p>
