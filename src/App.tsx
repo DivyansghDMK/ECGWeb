@@ -135,15 +135,15 @@ function App() {
             <span className="text-xl font-bold">ECG Monitor Documentation</span>
           </div>
           <div className="hidden md:flex space-x-6">
-            <button onClick={() => scrollToSection('timeline')} className="text-sm font-medium hover:text-blue-600 transition-colors">Timeline</button>
-            <button onClick={() => scrollToSection('completed')} className="text-sm font-medium hover:text-blue-600 transition-colors">Completed</button>
-            <button onClick={() => scrollToSection('structure')} className="text-sm font-medium hover:text-blue-600 transition-colors">Structure</button>
-            <button onClick={() => scrollToSection('issues')} className="text-sm font-medium hover:text-blue-600 transition-colors">Issues</button>
-            <button onClick={() => scrollToSection('performance')} className="text-sm font-medium hover:text-blue-600 transition-colors">Performance</button>
-            <button onClick={() => scrollToSection('docs')} className="text-sm font-medium hover:text-blue-600 transition-colors">Docs</button>
+            <button onClick={() => scrollToSection('timeline')} className="text-sm font-medium hover:text-orange-600 transition-colors">Timeline</button>
+            <button onClick={() => scrollToSection('completed')} className="text-sm font-medium hover:text-orange-600 transition-colors">Completed</button>
+            <button onClick={() => scrollToSection('structure')} className="text-sm font-medium hover:text-orange-600 transition-colors">Structure</button>
+            <button onClick={() => scrollToSection('issues')} className="text-sm font-medium hover:text-orange-600 transition-colors">Issues</button>
+            <button onClick={() => scrollToSection('performance')} className="text-sm font-medium hover:text-orange-600 transition-colors">Performance</button>
+            <button onClick={() => scrollToSection('docs')} className="text-sm font-medium hover:text-orange-600 transition-colors">Docs</button>
           </div>
           <div className="hidden md:flex items-center space-x-2">
-            <button onClick={handleContact} className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all">
+            <button onClick={handleContact} className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-all">
               Contact
             </button>
           </div>
@@ -167,7 +167,7 @@ function App() {
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 text-white py-24">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 1000 200" preserveAspectRatio="none">
@@ -217,10 +217,10 @@ function App() {
       <section id="timeline" className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-4">
               DEVELOPMENT ROADMAP
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
               Sprint Timeline
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -230,10 +230,10 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Sprint 1 - In Progress (CURRENT) */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-blue-400 hover:shadow-2xl transition-all ring-4 ring-blue-100">
+            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-orange-400 hover:shadow-2xl transition-all ring-4 ring-orange-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center animate-pulse">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center animate-pulse">
                     <Activity className="h-7 w-7 text-white" />
                   </div>
                   <div>
@@ -241,12 +241,12 @@ function App() {
                     <p className="text-sm text-gray-500">Nov 5-15, 2025</p>
                   </div>
                 </div>
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold animate-pulse">In Progress</span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold animate-pulse">In Progress</span>
               </div>
               
               <div className="mb-6">
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-500" style={{ width: '15%' }}></div>
+                  <div className="h-full bg-gradient-to-r from-orange-400 to-orange-600 rounded-full transition-all duration-500" style={{ width: '15%' }}></div>
                 </div>
                 <p className="text-right text-sm text-gray-600 mt-2">15% Complete • 🔥 Active Today!</p>
               </div>
@@ -258,8 +258,8 @@ function App() {
 
               <ul className="space-y-3">
                 <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
-                    <div className="h-2 w-2 bg-blue-400 rounded"></div>
+                  <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                    <div className="h-2 w-2 bg-orange-400 rounded"></div>
                   </div>
                   <div>
                     <span className="text-gray-700 font-medium block">ECG Metric Calculations</span>
@@ -267,8 +267,8 @@ function App() {
                   </div>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
-                    <div className="h-2 w-2 bg-blue-400 rounded"></div>
+                  <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                    <div className="h-2 w-2 bg-orange-400 rounded"></div>
                   </div>
                   <div>
                     <span className="text-gray-700 font-medium block">Wave Controls</span>
@@ -276,8 +276,8 @@ function App() {
                   </div>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
-                    <div className="h-2 w-2 bg-blue-400 rounded"></div>
+                  <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                    <div className="h-2 w-2 bg-orange-400 rounded"></div>
                   </div>
                   <div>
                     <span className="text-gray-700 font-medium block">Patient Details</span>
@@ -285,8 +285,8 @@ function App() {
                   </div>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-blue-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
-                    <div className="h-2 w-2 bg-blue-400 rounded"></div>
+                  <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                    <div className="h-2 w-2 bg-orange-400 rounded"></div>
                   </div>
                   <div>
                     <span className="text-gray-700 font-medium block">Overlay Working Mode</span>
@@ -298,7 +298,7 @@ function App() {
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <button 
                   onClick={() => openDocumentation('sprint-plan')}
-                  className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2"
+                  className="w-full py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold hover:from-orange-600 hover:to-orange-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2"
                 >
                   <FileText className="h-5 w-5" />
                   <span>View Full Sprint Plan</span>
