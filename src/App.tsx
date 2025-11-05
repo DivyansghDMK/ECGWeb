@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import {
+  Activity, CheckCircle2, FileText, Shield, Database,
+  Zap, Heart, Menu, X, ExternalLink, Download, Send,
+  Code, Package, AlertCircle, TrendingUp, BarChart3, Lock, Sparkles
+} from 'lucide-react';
 import { DocumentationViewer } from './components/DocumentationViewer';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { SprintTimeline } from './components/SprintTimeline';
-import { CompletedFeatures } from './components/CompletedFeatures';
 import { ContactModal } from './components/ContactModal';
 import { documentationFiles } from './data/documentation';
 
@@ -36,6 +37,33 @@ function App() {
   const openDocumentation = (docKey: string) => {
     setShowDocumentation(docKey);
   };
+
+  // Project completion data
+  const completedModules = [
+    { name: 'Core System', files: 5, lines: '~15,000', icon: Code },
+    { name: 'Authentication', files: 2, lines: '~3,000', icon: Lock },
+    { name: 'ECG Processing', files: 5, lines: '~25,000', icon: Activity },
+    { name: 'Dashboard', files: 3, lines: '~12,000', icon: TrendingUp },
+    { name: 'Utilities', files: 8, lines: '~18,000', icon: Package },
+    { name: 'Configuration', files: 2, lines: '~2,000', icon: Shield }
+  ];
+
+  const completedFeatures = [
+    '12-Lead ECG Real-time Visualization',
+    'Hardware Data Acquisition (Serial)',
+    'Demo Mode with Synthetic Data',
+    'Pan-Tompkins R-peak Detection',
+    'Real-time Metrics (HR, PR, QRS, QT/QTc, ST, HRV)',
+    'PDF Report Generation',
+    'User Authentication & Registration',
+    'Dashboard with Live Metrics',
+    'Admin Panel (Reports & Users)',
+    'Cloud Upload (AWS S3, Azure, GCS, FTP)',
+    'Offline-First Queue System',
+    'Session Recording & Playback',
+    'Crash Logger & Error Handling',
+    'Settings Management'
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
