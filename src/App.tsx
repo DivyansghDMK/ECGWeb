@@ -121,12 +121,12 @@ function App() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 text-white py-24">
         {/* Stable ECG Waveform Background Pattern */}
-        <div className="absolute inset-0 opacity-15">
-          <svg className="w-full h-full" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMid slice">
+        <div className="absolute inset-0 opacity-15 pointer-events-none">
+          <svg className="w-full h-full" preserveAspectRatio="none">
             <defs>
-              <pattern id="ecg-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-                <path d="M0,100 L40,100 L42,90 L44,110 L46,85 L48,120 L50,100 L90,100 L92,90 L94,110 L96,85 L98,120 L100,100 L140,100 L142,90 L144,110 L146,85 L148,120 L150,100 L190,100 L192,90 L194,110 L196,85 L198,120 L200,100" 
-                      stroke="currentColor" strokeWidth="1.5" fill="none" className="text-white"/>
+              <pattern id="ecg-pattern" x="0" y="0" width="300" height="100" patternUnits="userSpaceOnUse">
+                <path d="M0,50 L50,50 L52,45 L54,55 L56,42 L58,60 L60,50 L110,50 L112,45 L114,55 L116,42 L118,60 L120,50 L170,50 L172,45 L174,55 L176,42 L178,60 L180,50 L230,50 L232,45 L234,55 L236,42 L238,60 L240,50 L290,50 L292,45 L294,55 L296,42 L298,60 L300,50" 
+                      stroke="currentColor" strokeWidth="1.5" fill="none" className="text-white" strokeLinecap="round" strokeLinejoin="round"/>
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#ecg-pattern)"/>
