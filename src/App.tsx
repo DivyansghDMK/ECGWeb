@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
   Activity, CheckCircle2, FileText, Shield, Database, 
-  Zap, Heart, Menu, X, Github, ExternalLink, Download, Send, 
+  Zap, Heart, Menu, X, ExternalLink, Download, Send, 
   Code, Package, AlertCircle, TrendingUp, BarChart3, Lock, Sparkles
 } from 'lucide-react';
 import { DocumentationViewer } from './components/DocumentationViewer';
@@ -27,10 +27,6 @@ function App() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleGithub = () => {
-    window.open('https://github.com/DivyansghDMK/modularecg', '_blank');
   };
 
   const handleContact = () => {
@@ -125,7 +121,6 @@ function App() {
               </div>
               <div className="mt-6 pt-6 border-t space-y-2 text-sm text-gray-600">
                 <p><strong>Email:</strong> <a href="mailto:divyansh.srivastava@deckmount.in" className="text-blue-600 hover:underline">divyansh.srivastava@deckmount.in</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/DivyansghDMK/modularecg" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">github.com/DivyansghDMK/modularecg</a></p>
               </div>
             </div>
           </div>
@@ -148,9 +143,6 @@ function App() {
             <button onClick={() => scrollToSection('docs')} className="text-sm font-medium hover:text-blue-600 transition-colors">Docs</button>
           </div>
           <div className="hidden md:flex items-center space-x-2">
-            <button onClick={handleGithub} className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-all flex items-center">
-              <Github className="h-4 w-4 mr-2" /> GitHub
-            </button>
             <button onClick={handleContact} className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all">
               Contact
             </button>
@@ -201,8 +193,8 @@ function App() {
             {/* Stats Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-16">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all animate-scale-in opacity-0 stagger-1">
-                <div className="text-4xl md:text-5xl font-bold mb-2">1.68M+</div>
-                <div className="text-sm text-blue-200">Lines of Code</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">15K+</div>
+                <div className="text-sm text-blue-200">Core Code Lines</div>
               </div>
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all animate-scale-in opacity-0 stagger-2">
                 <div className="text-4xl md:text-5xl font-bold mb-2">27</div>
@@ -586,8 +578,8 @@ function App() {
                   </div>
                   <div className="w-px h-12 bg-white/30"></div>
                   <div>
-                    <p className="text-3xl font-bold mb-1">1.68M+</p>
-                    <p className="text-sm text-blue-100">Lines of Code</p>
+                    <p className="text-3xl font-bold mb-1">15K+</p>
+                    <p className="text-sm text-blue-100">Core Code Lines</p>
                   </div>
                   <div className="w-px h-12 bg-white/30"></div>
                   <div>
@@ -848,11 +840,8 @@ function App() {
                   Access full technical documentation or contact the development team
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <button onClick={handleGithub} className="px-10 py-4 bg-white text-blue-600 rounded-xl hover:bg-blue-50 transition-all transform hover:scale-105 font-semibold flex items-center shadow-lg">
-                    <Github className="h-5 w-5 mr-2" /> View on GitHub
-                  </button>
-                  <button onClick={handleContact} className="px-10 py-4 bg-white/20 border-2 border-white text-white rounded-xl hover:bg-white/30 transition-all transform hover:scale-105 font-semibold flex items-center backdrop-blur-sm">
-                    <Send className="h-5 w-5 mr-2" /> Contact Team
+                  <button onClick={handleContact} className="px-10 py-4 bg-white text-blue-600 rounded-xl hover:bg-blue-50 transition-all transform hover:scale-105 font-semibold flex items-center shadow-lg">
+                    <Send className="h-5 w-5 mr-2" /> Contact Development Team
                   </button>
                 </div>
               </div>
@@ -871,7 +860,7 @@ function App() {
                 <span className="font-bold text-xl">ECG Monitor</span>
               </div>
               <p className="text-gray-400 text-sm">
-                Professional ECG monitoring solution with 1.68M+ lines of production-ready code
+                Professional ECG monitoring solution with 15K+ lines of core production code
               </p>
             </div>
             <div>
@@ -898,15 +887,12 @@ function App() {
               <li><button onClick={() => openDocumentation('performance')} className="hover:text-white transition-colors flex items-center">
                 Performance <ExternalLink className="h-3 w-3 ml-1" />
               </button></li>
-              <li><button onClick={handleGithub} className="hover:text-white transition-colors flex items-center">
-                GitHub <ExternalLink className="h-3 w-3 ml-1" />
-              </button></li>
             </ul>
           </div>
           </div>
           <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
             <p>© 2025 ECG Monitor Application • Updated: November 5, 2025</p>
-            <p className="mt-2">1,681,834 lines • 27 modules • 0 critical bugs</p>
+            <p className="mt-2">15K+ core lines • 27 modules • 0 critical bugs</p>
           </div>
         </div>
       </footer>
