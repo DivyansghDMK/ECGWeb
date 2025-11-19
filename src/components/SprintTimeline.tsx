@@ -1,4 +1,4 @@
-import { Activity, Package, Sparkles, FileText } from 'lucide-react';
+import { Activity, Package, Sparkles, FileText, HeartPulse, Cpu } from 'lucide-react';
 
 interface SprintTimelineProps {
   openDocumentation: (key: string) => void;
@@ -50,6 +50,7 @@ export function SprintTimeline({ openDocumentation }: SprintTimelineProps) {
 
             <ul className="space-y-3">
               {[
+                { title: 'Urgent HRV Monitoring', desc: 'Escalation rules and UI alerts for rapid HRV drops' },
                 { title: 'ECG Metric Calculations', desc: 'P/QRS/T, RV5/SV1, RV5+SV1, QTCF formulas' },
                 { title: 'Wave Controls', desc: 'Wave Speed & Wave Gain functions' },
                 { title: 'Patient Details', desc: 'Fix data mapping & save logic' },
@@ -93,6 +94,13 @@ export function SprintTimeline({ openDocumentation }: SprintTimelineProps) {
               <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold">Planned</span>
             </div>
             
+            <div className="mb-4 p-3 bg-indigo-50 border border-indigo-200 rounded-lg">
+              <p className="text-xs font-semibold text-indigo-800 mb-1">🔮 UPCOMING FOCUS</p>
+              <p className="text-xs text-indigo-700">
+                Guest mode funnels, email/OTP guardrails, and ML model training for baseline arrhythmia detection.
+              </p>
+            </div>
+
             <div className="mb-6">
               <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                 <div className="h-full bg-gradient-to-r from-gray-300 to-gray-400 rounded-full" style={{ width: '0%' }}></div>
@@ -101,13 +109,29 @@ export function SprintTimeline({ openDocumentation }: SprintTimelineProps) {
             </div>
 
             <ul className="space-y-3">
-              {['Guest Mode implementation', 'Email/OTP authentication', 'Admin panel enhancements', 'Email report delivery'].map((task, i) => (
+              {[
+                'Guest Mode implementation',
+                'Email/OTP authentication',
+                'Admin panel enhancements',
+                'Email report delivery',
+                'ML model training for arrhythmia baseline detection'
+              ].map((task, i) => (
                 <li key={i} className="flex items-start space-x-2">
                   <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
                   <span className="text-gray-600">{task}</span>
                 </li>
               ))}
             </ul>
+
+          <div className="mt-6 pt-6 border-t border-gray-200">
+            <button
+              onClick={() => openDocumentation('sprint-plan')}
+              className="w-full py-3 bg-gradient-to-r from-gray-500 to-gray-700 text-white rounded-xl font-semibold hover:from-gray-600 hover:to-gray-800 transition-all transform hover:scale-105 flex items-center justify-center space-x-2"
+            >
+              <FileText className="h-5 w-5" />
+              <span>View Full Sprint Plan</span>
+            </button>
+          </div>
           </div>
 
           {/* Sprint 3 - Planned */}
@@ -125,6 +149,13 @@ export function SprintTimeline({ openDocumentation }: SprintTimelineProps) {
               <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold">Planned</span>
             </div>
             
+            <div className="mb-4 p-3 bg-purple-50 border border-purple-200 rounded-lg">
+              <p className="text-xs font-semibold text-purple-800 mb-1">🛡️ PLATFORM SCOPE</p>
+              <p className="text-xs text-purple-700">
+                Compliance-ready security, ML-powered advanced ECG analytics, and enterprise data exchange tooling.
+              </p>
+            </div>
+
             <div className="mb-6">
               <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                 <div className="h-full bg-gradient-to-r from-purple-300 to-purple-400 rounded-full" style={{ width: '0%' }}></div>
@@ -140,6 +171,57 @@ export function SprintTimeline({ openDocumentation }: SprintTimelineProps) {
                 </li>
               ))}
             </ul>
+
+          <div className="mt-6 pt-6 border-t border-gray-200">
+            <button
+              onClick={() => openDocumentation('sprint-plan')}
+              className="w-full py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all transform hover:scale-105 flex items-center justify-center space-x-2"
+            >
+              <FileText className="h-5 w-5" />
+              <span>View Full Sprint Plan</span>
+            </button>
+          </div>
+          </div>
+        </div>
+
+        {/* Feature Focus */}
+        <div className="mt-16 max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+          <div className="relative overflow-hidden rounded-2xl border border-orange-200 bg-white shadow-lg p-6">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                <HeartPulse className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-orange-600 uppercase tracking-wide">New Feature</p>
+                <h3 className="text-2xl font-bold text-gray-900">Urgent HRV Response</h3>
+              </div>
+            </div>
+            <p className="text-gray-600">
+              Real-time HRV anomaly detection with escalation badges, clinical copy, and sprint-level ownership so stakeholders
+              can see how we are prioritizing critical patient stability.
+            </p>
+            <div className="mt-4 inline-flex items-center space-x-2 rounded-full bg-orange-50 px-4 py-1 text-sm font-semibold text-orange-700">
+              <span>Tracked in Sprint 1</span>
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-2xl border border-indigo-200 bg-white shadow-lg p-6">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center">
+                <Cpu className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-indigo-600 uppercase tracking-wide">New Feature</p>
+                <h3 className="text-2xl font-bold text-gray-900">ML Model Training</h3>
+              </div>
+            </div>
+            <p className="text-gray-600">
+              Baseline training workflows for the arrhythmia detection model, including data curation cards, model health
+              status, and a visual timeline placement for Sprint 2 so leadership knows when insight automation lands.
+            </p>
+            <div className="mt-4 inline-flex items-center space-x-2 rounded-full bg-indigo-50 px-4 py-1 text-sm font-semibold text-indigo-700">
+              <span>Planned for Sprint 2</span>
+            </div>
           </div>
         </div>
 
@@ -170,4 +252,7 @@ export function SprintTimeline({ openDocumentation }: SprintTimelineProps) {
     </section>
   );
 }
+
+
+
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import {
   Activity, CheckCircle2, FileText, Shield, Database,
   Zap, Heart, Menu, X, ExternalLink, Download, Send,
-  Code, Package, AlertCircle, TrendingUp, BarChart3, Lock, Sparkles
+  Code, Package, AlertCircle, TrendingUp, BarChart3, Lock, Sparkles, HeartPulse, Cpu
 } from 'lucide-react';
 import { DocumentationViewer } from './components/DocumentationViewer';
 import { ContactModal } from './components/ContactModal';
@@ -214,42 +214,23 @@ function App() {
               </div>
 
               <ul className="space-y-3">
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
-                    <div className="h-2 w-2 bg-orange-400 rounded"></div>
-                  </div>
-                  <div>
-                    <span className="text-gray-700 font-medium block">ECG Metric Calculations</span>
-                    <span className="text-xs text-gray-500">P/QRS/T, RV5/SV1, RV5+SV1, QTCF formulas</span>
-                  </div>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
-                    <div className="h-2 w-2 bg-orange-400 rounded"></div>
-                  </div>
-                  <div>
-                    <span className="text-gray-700 font-medium block">Wave Controls</span>
-                    <span className="text-xs text-gray-500">Wave Speed & Wave Gain functions</span>
-                  </div>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
-                    <div className="h-2 w-2 bg-orange-400 rounded"></div>
-                  </div>
-                  <div>
-                    <span className="text-gray-700 font-medium block">Patient Details</span>
-                    <span className="text-xs text-gray-500">Fix data mapping & save logic</span>
-                  </div>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
-                    <div className="h-2 w-2 bg-orange-400 rounded"></div>
-                  </div>
-                  <div>
-                    <span className="text-gray-700 font-medium block">Overlay Working Mode</span>
-                    <span className="text-xs text-gray-500">Fix graph freeze issue</span>
-                  </div>
-                </li>
+                {[
+                  { title: 'Urgent HRV Monitoring', desc: 'Escalation rules and UI alerts for rapid HRV drops' },
+                  { title: 'ECG Metric Calculations', desc: 'P/QRS/T, RV5/SV1, RV5+SV1, QTCF formulas' },
+                  { title: 'Wave Controls', desc: 'Wave Speed & Wave Gain functions' },
+                  { title: 'Patient Details', desc: 'Fix data mapping & save logic' },
+                  { title: 'Overlay Working Mode', desc: 'Fix graph freeze issue' }
+                ].map((task, i) => (
+                  <li key={i} className="flex items-start space-x-2">
+                    <div className="h-5 w-5 border-2 border-orange-400 rounded flex items-center justify-center flex-shrink-0 mt-0.5 animate-pulse">
+                      <div className="h-2 w-2 bg-orange-400 rounded"></div>
+                    </div>
+                    <div>
+                      <span className="text-gray-700 font-medium block">{task.title}</span>
+                      <span className="text-xs text-gray-500">{task.desc}</span>
+                    </div>
+                  </li>
+                ))}
               </ul>
 
               <div className="mt-6 pt-6 border-t border-gray-200">
@@ -278,6 +259,13 @@ function App() {
                 <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold">Planned</span>
               </div>
               
+              <div className="mb-4 p-3 bg-indigo-50 border border-indigo-200 rounded-lg">
+                <p className="text-xs font-semibold text-indigo-800 mb-1">🔮 UPCOMING FOCUS</p>
+                <p className="text-xs text-indigo-700">
+                  Guest mode funnels, email/OTP guardrails, and ML model training for baseline arrhythmia detection.
+                </p>
+              </div>
+
               <div className="mb-6">
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                   <div className="h-full bg-gradient-to-r from-gray-300 to-gray-400 rounded-full" style={{ width: '0%' }}></div>
@@ -286,23 +274,29 @@ function App() {
               </div>
 
               <ul className="space-y-3">
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
-                  <span className="text-gray-600">Guest Mode implementation</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
-                  <span className="text-gray-600">Email/OTP authentication</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
-                  <span className="text-gray-600">Admin panel enhancements</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
-                  <span className="text-gray-600">Email report delivery</span>
-                </li>
+                {[
+                  'Guest Mode implementation',
+                  'Email/OTP authentication',
+                  'Admin panel enhancements',
+                  'Email report delivery',
+                  'ML model training for arrhythmia baseline detection'
+                ].map((task, i) => (
+                  <li key={i} className="flex items-start space-x-2">
+                    <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                    <span className="text-gray-600">{task}</span>
+                  </li>
+                ))}
               </ul>
+
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <button 
+                  onClick={() => openDocumentation('sprint-plan')}
+                  className="w-full py-3 bg-gradient-to-r from-gray-500 to-gray-700 text-white rounded-xl font-semibold hover:from-gray-600 hover:to-gray-800 transition-all transform hover:scale-105 flex items-center justify-center space-x-2"
+                >
+                  <FileText className="h-5 w-5" />
+                  <span>View Full Sprint Plan</span>
+                </button>
+              </div>
             </div>
 
             {/* Sprint 3 - Planned */}
@@ -320,6 +314,13 @@ function App() {
                 <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold">Planned</span>
               </div>
               
+              <div className="mb-4 p-3 bg-purple-50 border border-purple-200 rounded-lg">
+                <p className="text-xs font-semibold text-purple-800 mb-1">🛡️ PLATFORM SCOPE</p>
+                <p className="text-xs text-purple-700">
+                  Compliance-ready security, ML-powered advanced ECG analytics, and enterprise data exchange tooling.
+                </p>
+              </div>
+
               <div className="mb-6">
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                   <div className="h-full bg-gradient-to-r from-purple-300 to-purple-400 rounded-full" style={{ width: '0%' }}></div>
@@ -328,23 +329,64 @@ function App() {
               </div>
 
               <ul className="space-y-3">
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
-                  <span className="text-gray-600">Role-based permissions</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
-                  <span className="text-gray-600">Security improvements</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
-                  <span className="text-gray-600">Advanced ECG analysis (ML)</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
-                  <span className="text-gray-600">Data export/import features</span>
-                </li>
+                {['Role-based permissions', 'Security improvements', 'Advanced ECG analysis (ML)', 'Data export/import features'].map((task, i) => (
+                  <li key={i} className="flex items-start space-x-2">
+                    <div className="h-5 w-5 border-2 border-gray-300 rounded flex-shrink-0 mt-0.5"></div>
+                    <span className="text-gray-600">{task}</span>
+                  </li>
+                ))}
               </ul>
+
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <button 
+                  onClick={() => openDocumentation('sprint-plan')}
+                  className="w-full py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-xl font-semibold hover:from-purple-600 hover:to-purple-800 transition-all transform hover:scale-105 flex items-center justify-center space-x-2"
+                >
+                  <FileText className="h-5 w-5" />
+                  <span>View Full Sprint Plan</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature Focus */}
+          <div className="mt-16 max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+            <div className="relative overflow-hidden rounded-2xl border border-orange-200 bg-white shadow-lg p-6">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                  <HeartPulse className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-orange-600 uppercase tracking-wide">New Feature</p>
+                  <h3 className="text-2xl font-bold text-gray-900">Urgent HRV Response</h3>
+                </div>
+              </div>
+              <p className="text-gray-600">
+                Real-time HRV anomaly detection with escalation badges, clinical copy, and sprint-level ownership so stakeholders
+                can see how we are prioritizing critical patient stability.
+              </p>
+              <div className="mt-4 inline-flex items-center space-x-2 rounded-full bg-orange-50 px-4 py-1 text-sm font-semibold text-orange-700">
+                <span>Tracked in Sprint 1</span>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-2xl border border-indigo-200 bg-white shadow-lg p-6">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center">
+                  <Cpu className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-indigo-600 uppercase tracking-wide">New Feature</p>
+                  <h3 className="text-2xl font-bold text-gray-900">ML Model Training</h3>
+                </div>
+              </div>
+              <p className="text-gray-600">
+                Baseline training workflows for the arrhythmia detection model, including data curation cards, model health
+                status, and a visual timeline placement for Sprint 2 so leadership knows when insight automation lands.
+              </p>
+              <div className="mt-4 inline-flex items-center space-x-2 rounded-full bg-indigo-50 px-4 py-1 text-sm font-semibold text-indigo-700">
+                <span>Planned for Sprint 2</span>
+              </div>
             </div>
           </div>
 
